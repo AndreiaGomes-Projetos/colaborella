@@ -19,7 +19,7 @@ function SimpleAppBar(props) {
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="inherit">
-            Colaborela
+            Colaborella
           </Typography>
         </Toolbar>
       </AppBar>
