@@ -3,13 +3,17 @@ import StarRatingComponent from "react-star-rating-component";
 // import "./Info.css";
 
 function Info(props) {
+  var myStyle = {
+    width: "200px",
+    height:"200px"
+  }
   return (
     <nav>
       <div className="blue-info rounded-top"></div>
       <span className="d-flex flex-column align-items-center justify-content-start px-3">
-        <img className="img rounded-circle m-3" src={require("./images/ibm1.png")} alt="Remy Sharp" />
+        <div className={props.className} style={myStyle}></div>
         <span className="d-flex flex-column">
-          <h4 className="m-0">IBM Brasil</h4>
+          <h4 className="m-0 text-center">{props.name}</h4>
           <small className="text-center">Avaliação Média:</small>
           <StarRatingComponent name="rate2"
             editing={false}

@@ -1,32 +1,122 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ibm {
+  background-image: url("./images/ibm1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.loggi {
+  background-image: url("./images/loggi1.png");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gft {
+  background-image: url("./images/gft1.png");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creditas {
+  background-image: url("./images/creditas1.jpg");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dasa {
+  background-image: url("./images/dasa1.JPG");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drumwave {
+  background-image: url("./images/drumwave.JPG");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.tivit {
+  background-image: url("./images/tivit.JPG");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.fcamara {
+  background-image: url("./images/f-camara.png");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.avanade {
+  background-image: url("./images/avanade1.jpg");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.stefanini {
+  background-image: url("./images/stefanini.png");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.inovabra {
+  background-image: url("./images/inovabra.jpg");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.accenture {
+  background-image: url("./images/accenture.jpg");
+   background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }

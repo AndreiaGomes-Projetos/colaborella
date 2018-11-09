@@ -18,13 +18,15 @@ class App extends Component {
       post: [],
       message: "",
       rating: 0,
-      media: 0
+      media: 0,
+      image: "ibm",
+      name: "IBM Brasil"
     }
     this.HandleInputChange = this.HandleInputChange.bind(this);
     this.HandleClick = this.HandleClick.bind(this);
     this.OnStarClick = this.OnStarClick.bind(this);
+    this.HandleCompanies = this.HandleCompanies.bind(this);
   }
-
   
   HandleInputChange(event) {
     let message = event.target.value;
@@ -50,14 +52,23 @@ class App extends Component {
         rating: 0
       };
     });
-    
+  }
+
+  HandleCompanies(event) {
+    let image = event.target.className;
+    let name = event.target.name;
+    this.setState({
+      image: image,
+      name: name,
+      post: [],
+      raiting: 0
+    })
   }
 
   OnStarClick(nextValue, prevValue, name) {
     this.setState({
       rating: nextValue
     });
-    console.log(nextValue)
   }
 
   render() {
@@ -69,7 +80,7 @@ class App extends Component {
           </Grid>
           <Grid item xs={12} md={3}>
             <Paper className="m-3">
-              <Info rating={this.state.media} />
+              <Info rating={this.state.media} className={this.state.image} name={this.state.name} />
             </Paper>
             
           </Grid>
@@ -99,7 +110,7 @@ class App extends Component {
             </Grid>
             <Grid item xs={12} md={3} className="">
               <Paper className="d-flex flex-column align-items-center m-3">
-                <Companies />
+              <Companies onClick={this.HandleCompanies} className />
               </Paper>
           </Grid>
         </Grid>

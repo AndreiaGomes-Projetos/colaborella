@@ -14,3 +14,12 @@
 .follow-options {
   font-size: 14px;
 }
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
