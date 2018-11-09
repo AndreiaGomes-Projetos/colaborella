@@ -19,9 +19,9 @@ function MessageCard(props) {
           <div className="card-tweet d-flex align-items-center justify-content-center rounded my-2">
             <Card className="m-2 p-2 message card-tweet d-flex">
               <div className="d-flex ">
-              <Avatar className="mr-2" src={require("./images/avatar.JPG")} />
-              <p className="m-0 mr-2 font-weight-bold">Anônima:</p>
-            </div>
+                <Avatar className="mr-2" src={require("./images/avatar.JPG")} />
+                <p className="m-0 mr-2 font-weight-bold">Anônima:</p>
+              </div>
               <div className="">
                 <EachMessage message={post.message}
                   key={index} />
@@ -31,9 +31,10 @@ function MessageCard(props) {
                   value={post.rating}
 
                 />
+                <div tone={props.tone}></div>
               </div>
 
-              
+
             </Card>
           </div>
         )

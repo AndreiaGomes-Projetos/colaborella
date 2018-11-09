@@ -6,7 +6,7 @@ import { TextField } from "@material-ui/core";
 function Input(props) {
   return (
     <form>
-      <h5 className="text-center m-0 pt-3">Descreva suas habilidades e conte-nos sobre sua experiência:</h5>
+      <h5 className="text-center m-0 pt-3">Como sua empresa colabora para equidade de gênero? Nos inspire com sua história...</h5>
       <TextField  onChange={props.onChange} 
                   value={props.value} id="outlined-textarea"
                   className={props.class}

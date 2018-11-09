@@ -27,7 +27,7 @@ class App extends Component {
     this.OnStarClick = this.OnStarClick.bind(this);
     this.HandleCompanies = this.HandleCompanies.bind(this);
   }
-  
+
   HandleInputChange(event) {
     let message = event.target.value;
     this.setState({
@@ -44,7 +44,7 @@ class App extends Component {
 
       const ratingSum = newPostsArray.reduce((acc, next) => acc + parseInt(next.rating), 0);
       const ratingAvg = ratingSum / newPostsArray.length;
-      
+
       return {
         post: newPostsArray,
         media: ratingAvg.toFixed(1),
@@ -83,39 +83,39 @@ class App extends Component {
             <Paper className="m-3">
               <Info rating={this.state.media} className={this.state.image} name={this.state.name} />
             </Paper>
-            
+
           </Grid>
           <Grid item xs={12} md={6} >
             <Paper className="d-flex flex-column align-items-center mt-3">
-              <Input  value={this.state.message}
-                      onChange={event => {
-                        this.HandleInputChange(event)
-                      }}
+              <Input value={this.state.message}
+                onChange={event => {
+                  this.HandleInputChange(event)
+                }}
               />
-              <Questions  OnStarClick={this.OnStarClick}
-                          value={this.state.rating}
-                          questions="Você recomendaria esta empresa?"
+              <Questions OnStarClick={this.OnStarClick}
+                value={this.state.rating}
+                questions="Você recomendaria esta empresa?"
               />
-              <Buttons  variant="raised"
-                        color="primary"
-                        size="small"
-                        onClick={event => {
-                          this.HandleClick(event);
-                         }}
-                        name={"Postar Avaliação"}
+              <Buttons variant="raised"
+                color="primary"
+                size="small"
+                onClick={event => {
+                  this.HandleClick(event);
+                }}
+                name={"Postar Avaliação"}
               />
             </Paper>
-            
+
             <MessageCard posts={this.state.post} />
-           
-            </Grid>
-            <Grid item xs={12} md={3} className="">
-              <Paper className="d-flex flex-column align-items-center m-3">
+
+          </Grid>
+          <Grid item xs={12} md={3} className="">
+            <Paper className="d-flex flex-column align-items-center m-3">
               <Companies onClick={this.HandleCompanies} className />
-              </Paper>
+            </Paper>
           </Grid>
         </Grid>
-        
+
       </div>
     );
   }
