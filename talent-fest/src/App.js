@@ -7,7 +7,8 @@ import MessageCard from "./MessageCard";
 import Header from "./Header";
 import Aside from "./Aside";
 import Info from "./Info";
-
+import Questions from "./Questions";
+// import StarRatingComponent from "react-star-rating-component";
 
 class App extends Component {
 
@@ -15,10 +16,12 @@ class App extends Component {
     super(props);
     this.state = {
       post: [],
-      message: ""
+      message: "",
+      rating: 0
     }
     this.HandleInputChange = this.HandleInputChange.bind(this);
     this.HandleClick = this.HandleClick.bind(this);
+    this.OnStarClick = this.OnStarClick.bind(this);
   }
 
   HandleInputChange(event) {
@@ -31,10 +34,15 @@ class App extends Component {
   HandleClick() {
     this.setState((prevState) => {
       return {
-        post: prevState.post.concat([{ message: prevState.message}]).reverse(),
-        message: ""
+        post: prevState.post.concat([{ message: prevState.message, rating: prevState.rating}]).reverse(),
+        message: "",
+        rating: 0
       };
     });
+  }
+
+  OnStarClick(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
   }
 
   render() {
@@ -53,6 +61,10 @@ class App extends Component {
                       this.HandleInputChange(event)
                     }}
             />
+            <Questions  OnStarClick={this.OnStarClick}
+                        value={this.state.rating}
+                        questions="Você recomendaria esta empresa?"
+            />
             <Buttons  variant="raised"
                       color="primary"
                       size="small"
@@ -62,6 +74,7 @@ class App extends Component {
                       name={"Postar Avaliação"}
             />
           <MessageCard posts={this.state.post} />
+           
           </Grid>
           <Grid item xs={12} md={3} className="mt-3">
             <Paper className="d-flex flex-column align-items-center">
@@ -70,7 +83,7 @@ class App extends Component {
             
           </Grid>
         </Grid>
-         
+        
       </div>
     );
   }
