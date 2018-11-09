@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import "./Header.css";
 
 const styles = {
   root: {
@@ -18,7 +19,7 @@ function SimpleAppBar(props) {
       <AppBar position="static" color="primary">
         <Toolbar className="d-flex justify-content-center">
           <Typography variant="h6" color="inherit">
-            Colaborella
+            <span className="colaborella">Colaborella</span>
           </Typography>
         </Toolbar>
       </AppBar>
