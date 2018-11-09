@@ -44,7 +44,7 @@ class App extends Component {
 
       const ratingSum = newPostsArray.reduce((acc, next) => acc + parseInt(next.rating), 0);
       const ratingAvg = ratingSum / newPostsArray.length;
-      console.log(ratingAvg);
+      
       return {
         post: newPostsArray,
         media: ratingAvg.toFixed(1),
@@ -61,7 +61,8 @@ class App extends Component {
       image: image,
       name: name,
       post: [],
-      raiting: 0
+      raiting: 0,
+      media: 0
     })
   }
 
