@@ -19,7 +19,7 @@ class App extends Component {
       message: "",
       rating: 0,
       media: 0,
-      image: "ibm",
+      image: "ibm m-3",
       name: "IBM Brasil"
     }
     this.HandleInputChange = this.HandleInputChange.bind(this);
