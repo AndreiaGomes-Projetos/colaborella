@@ -5,6 +5,7 @@ import Buttons from "./Buttons";
 import { Grid, Paper } from "@material-ui/core";
 import MessageCard from "./MessageCard";
 import Header from "./Header";
+import StarRatingComponent from 'react-star-rating-component';
 // import Aside from "./Aside";
 
 
@@ -14,7 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       post: [],
-      message: ""
+      message: "",
+      rating: 1
     }
     this.HandleInputChange = this.HandleInputChange.bind(this);
     this.HandleClick = this.HandleClick.bind(this);
@@ -36,6 +38,10 @@ class App extends Component {
     });
   }
 
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({rating: nextValue});
+  }
+
   render() {
     return (
       <div>
@@ -43,9 +49,7 @@ class App extends Component {
           <Grid item xs={12}>
             <Header />
           </Grid>
-          {/* <Grid>
-            
-          </Grid> */}
+          
           <Grid item xs={12}>
             <Input />
           </Grid>
@@ -66,7 +70,12 @@ class App extends Component {
             <MessageCard posts={this.state.post} />
           </Grid>
         </Grid>
-         
+         <StarRatingComponent 
+          name="rate2" 
+          onStarClick={this.onStarClick.bind(this)}
+          starCount={5}
+          value={this.state.rating}
+        />
       </div>
     );
   }
