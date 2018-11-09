@@ -13,12 +13,11 @@ const styles = {
 
 function SimpleAppBar(props) {
   const { classes } = props;
-
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
+        <Toolbar className="d-flex justify-content-center">
+          <Typography variant="h6" color="inherit" >
             Colaborella
           </Typography>
         </Toolbar>

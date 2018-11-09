@@ -17,7 +17,7 @@ function MessageCard(props) {
       {props.posts.map((post, index) => {
         return (
           <div className="card-tweet d-flex align-items-center border rounded m-2">
-            <Card className="m-2 p-2">
+            <Card className="m-2 p-2 message">
               <EachTweet message={post.message}
                          key={index} />
             </Card>

@@ -5,7 +5,8 @@ import Buttons from "./Buttons";
 import { Grid, Paper } from "@material-ui/core";
 import MessageCard from "./MessageCard";
 import Header from "./Header";
-// import Aside from "./Aside";
+import Aside from "./Aside";
+import Info from "./Info";
 
 
 class App extends Component {
@@ -43,27 +44,30 @@ class App extends Component {
           <Grid item xs={12}>
             <Header />
           </Grid>
-          {/* <Grid>
-            
-          </Grid> */}
-          <Grid item xs={12}>
-            <Input />
+          <Grid item xs={12} md={3}>
+            <Info />
           </Grid>
-          <Grid item xs={12} className="d-flex flex-column align-items-center m-5">
-           <Input value={this.state.message}
-              onChange={event => {
-                this.HandleInputChange(event)
-              }}
+          <Grid item xs={12} md={6} className="d-flex flex-column align-items-center mt-3">
+            <Input  value={this.state.message}
+                    onChange={event => {
+                      this.HandleInputChange(event)
+                    }}
             />
-            <Buttons variant="raised"
-              color="primary"
-              size="small"
-              onClick={event => {
-                this.HandleClick(event);
-              }}
-              name={"Postar Avaliação"}
+            <Buttons  variant="raised"
+                      color="primary"
+                      size="small"
+                      onClick={event => {
+                        this.HandleClick(event);
+                      }}
+                      name={"Postar Avaliação"}
             />
-            <MessageCard posts={this.state.post} />
+          <MessageCard posts={this.state.post} />
+          </Grid>
+          <Grid item xs={12} md={3} className="mt-3">
+            <Paper className="d-flex flex-column align-items-center">
+            <Aside />
+          </Paper>
+            
           </Grid>
         </Grid>
          
