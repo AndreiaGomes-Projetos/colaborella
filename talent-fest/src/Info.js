@@ -1,14 +1,6 @@
 import React from "react";
+import StarRatingComponent from "react-star-rating-component";
 // import "./Info.css";
-
-// function Info2(props) {
-//   return (
-//     <div className="mx-2 p-1">
-//       <small className="smallinfo font-weight-bold">{props.label}</small>
-//       <p className="pinfo font-weight-bold m-0">{props.value}</p>
-//     </div>
-//   )
-// }
 
 function Info(props) {
   return (
@@ -19,6 +11,14 @@ function Info(props) {
         <span className="d-flex flex-column">
           <h4 className="m-0">IBM Brasil</h4>
           <small className="text-center">Avaliação Média:</small>
+          <StarRatingComponent name="rate2"
+            editing={false}
+            starCount={props.count}
+            value={props.rating}
+            className="d-flex flex-row-reverse justify-content-center"
+
+          />
+          <p className="text-center font-weight-bold">{props.rating}</p>
         </span>
       </span>
       <span className="d-flex justify-content-center">

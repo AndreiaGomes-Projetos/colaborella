@@ -17,13 +17,15 @@ class App extends Component {
     this.state = {
       post: [],
       message: "",
-      rating: 0
+      rating: 0,
+      media: 0
     }
     this.HandleInputChange = this.HandleInputChange.bind(this);
     this.HandleClick = this.HandleClick.bind(this);
     this.OnStarClick = this.OnStarClick.bind(this);
   }
 
+  
   HandleInputChange(event) {
     let message = event.target.value;
     this.setState({
@@ -33,16 +35,29 @@ class App extends Component {
 
   HandleClick() {
     this.setState((prevState) => {
+      const newPostsArray = prevState.post.concat([{
+        message: prevState.message,
+        rating: prevState.rating
+      }]).reverse();
+
+      const ratingSum = newPostsArray.reduce((acc, next) => acc + parseInt(next.rating), 0);
+      const ratingAvg = ratingSum / newPostsArray.length;
+      console.log(ratingAvg);
       return {
-        post: prevState.post.concat([{ message: prevState.message, rating: prevState.rating}]).reverse(),
+        post: newPostsArray,
+        media: ratingAvg.toFixed(1),
         message: "",
         rating: 0
       };
     });
+    
   }
 
   OnStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
+    this.setState({
+      rating: nextValue
+    });
+    console.log(nextValue)
   }
 
   render() {
@@ -54,12 +69,12 @@ class App extends Component {
           </Grid>
           <Grid item xs={12} md={3}>
             <Paper className="m-3">
-              <Info />
+              <Info rating={this.state.media} />
             </Paper>
             
           </Grid>
           <Grid item xs={12} md={6} >
-            <Paper className="d-flex flex-column align-items-center my-3">
+            <Paper className="d-flex flex-column align-items-center mt-3">
               <Input  value={this.state.message}
                       onChange={event => {
                         this.HandleInputChange(event)
@@ -86,7 +101,6 @@ class App extends Component {
               <Paper className="d-flex flex-column align-items-center m-3">
                 <Companies />
               </Paper>
-            
           </Grid>
         </Grid>
         

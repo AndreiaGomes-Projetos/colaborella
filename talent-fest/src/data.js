@@ -1,4 +1,4 @@
-const  = Companies[
+const data = [
   {
     'name': "Accenture",
     'logo': "images/Accenture.png",
