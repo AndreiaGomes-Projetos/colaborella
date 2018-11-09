@@ -14,11 +14,11 @@ function Info(props) {
   return (
     <nav>
       <div className="blue-info rounded-top"></div>
-      <span className="d-flex align-items-center justify-content-start px-3">
-        {/* <img className="img mr-3" src={require("")} alt="Remy Sharp" /> */}
-        <span>
-          <h3 className="m-0">Empresa</h3>
-          <small>Observações</small>
+      <span className="d-flex flex-column align-items-center justify-content-start px-3">
+        <img className="img rounded-circle m-3" src={require("./images/ibm1.png")} alt="Remy Sharp" />
+        <span className="d-flex flex-column">
+          <h4 className="m-0">IBM Brasil</h4>
+          <small className="text-center">Avaliação Média:</small>
         </span>
       </span>
       <span className="d-flex justify-content-center">

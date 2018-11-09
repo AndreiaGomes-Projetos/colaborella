@@ -7,21 +7,21 @@ function Sugestions(props) {
   return (
     <React.Fragment>
       <div className="d-flex align-items-center">
-        <Avatar alt="photo" src={props.src} />
+        <Avatar alt="photo" src={props.src} className="border" />
         <p className="follow-options font-weight-bold m-0 px-1">{props.name}</p>
         <small className="follow-options m-0 px-1">{props.nick}</small>
       </div>
       <Buttons variant="outlined"
         color="primary"
         size="small"
-        name="Avaliar"
+        name="Ver avaliações"
         className="p-0"
       />
     </React.Fragment>
   )
 }
 
-function Follow() {
+function Companies() {
   return (
     <React.Fragment>
       <span className="d-flex m-2">
@@ -35,4 +35,4 @@ function Follow() {
   )
 }
 
-export default Follow
+export default Companies;
