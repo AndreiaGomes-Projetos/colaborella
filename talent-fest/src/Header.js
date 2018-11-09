@@ -16,7 +16,7 @@ function SimpleAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="inenheit">
         <Toolbar className="d-flex justify-content-center">
           <Typography variant="h6" color="inherit">
             <span className="colaborella">Colaborella</span>
